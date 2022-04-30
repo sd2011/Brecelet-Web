@@ -11,7 +11,7 @@ function Header({headerColor,headerHide}) {
             <Link to="/" className="name" style={{ color: '#dddddd' }}>Name Placeholder</Link>
         </div>
         <div className="links_container">
-            <Link to="/songs" style={{ color: '#dddddd'} } >songs</Link><Link to="/posts" style={{ color: '#dddddd'} } >posts</Link>
+            <Link to="/songs" style={{ color: '#dddddd'} } >songs</Link><a>posts</a>
         </div>
       </div>
   )
