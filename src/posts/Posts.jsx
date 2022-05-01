@@ -18,7 +18,7 @@ function Posts() {
         const getMusic = async () =>{
             try {
                 const res = await axios.get(MUSIC_URL)
-                console.log(res.data)
+                console.log(res)
                 setMusicFiles(res.data.files)
                 setErr(null)
             }catch (err){
