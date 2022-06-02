@@ -8,7 +8,7 @@ function Header({headerColor,headerHide}) {
     return (
         <div className={"header up "+ color +" " +hide}  id="header">
             <div className="name_container">
-                <Link to="/" className="name" style={{ color: '#dddddd' }}>Name Placeholder</Link>
+                <Link to="/" className="name" style={{ color: '#dddddd' }}>Musical Bracelet</Link>
             </div>
             <div className="links_container">
                 <Link to="/songs" style={{ color: '#dddddd'} } >songs</Link><Link to="/posts" style={{ color: '#dddddd'} } >posts</Link>

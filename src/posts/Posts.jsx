@@ -5,12 +5,12 @@ import "./Posts.css"
 
 import { useState,useEffect } from 'react'
 import axios from "axios";
+import PostState from "./context/PostState";
 
 
 function Posts() {
 
-    const MUSIC_URL ="http://localhost:3001/music"
-
+    const MUSIC_URL = (!process.env.NODE_ENV || process.env.NODE_ENV === 'development') ? "http://localhost:3000/music" : "https://musical-bracelet-server.herokuapp.com/music"
     const [musicFiles,setMusicFiles] = useState(null)
     const [err, setErr] = useState("loading...")
 
@@ -33,11 +33,13 @@ function Posts() {
         <div className="Posts">
             <Header/>
             <div className="posts_container">
-                {err ? <div className="err">{err}</div> :
-                    musicFiles.map((musicFile)=>{
-                        console.log(MUSIC_URL)
-                        return(<Post file={musicFile} url={MUSIC_URL}/>)
-                    })}
+                <PostState>
+                    {err ? <div className="err">{err}</div> :
+                        musicFiles.map((musicFile,i)=>{
+                            console.log(MUSIC_URL)
+                            return(<Post file={musicFile} url={MUSIC_URL} index={i}/>)
+                        })}
+                </PostState>
             </div>
         </div>
     )
