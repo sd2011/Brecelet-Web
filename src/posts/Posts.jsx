@@ -10,7 +10,7 @@ import PostState from "./context/PostState";
 
 function Posts() {
 
-    const MUSIC_URL = (!process.env.NODE_ENV || process.env.NODE_ENV === 'development') ? "http://localhost:3000/music" : "https://musical-bracelet-server.herokuapp.com/music"
+    const MUSIC_URL = (!process.env.NODE_ENV || process.env.NODE_ENV === 'development') ? "http://localhost:3001/music" : "https://musical-bracelet-server.herokuapp.com/music"
     const [musicFiles,setMusicFiles] = useState(null)
     const [err, setErr] = useState("loading...")
 

@@ -85,6 +85,11 @@ function Post({file,url,index}) {
         duration === 0 ? e.target.currentTime = time : null
     }
 
+    const handleEnd = (e) => {
+        setRange(0)
+        setPlaying(false)
+    }
+
 
     return(
         <div className={"post " + ((index !== 0 )? "border-top" : "")}  key={file._id} >
@@ -92,6 +97,7 @@ function Post({file,url,index}) {
             ref={audio}
             onTimeUpdate={handleTimeUpdate}
             onCanPlay={handlePlay}
+            onEnded={handleEnd}
             type="audio/mpeg"
             preload="metadata"
             src={url+'/'+file.filename}>
