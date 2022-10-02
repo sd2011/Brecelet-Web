@@ -1,5 +1,11 @@
 import { useState,useRef,useEffect } from 'react'
 import Header  from "../header/Header"
+import NOTE_PIC  from "../pics/note.jpg"
+import PLAY_FLAT  from "../pics/play-flat.png"
+import {Link} from "react-router-dom";
+import ROI from "../pics/roi.jpeg"
+import STAV from "../pics/stav.jpg"
+import ARDUINO from "../pics/arduino.jpeg"
 
 
 function Home() {
@@ -15,7 +21,7 @@ function Home() {
     useEffect(() =>{
         prevScroll.current = curScroll
         window.addEventListener('scroll', checkScroll);
-        console.log(headerState)
+
 
         return () => window.removeEventListener('scroll', checkScroll)
     }, [headerState])
@@ -84,7 +90,12 @@ function Home() {
                         </h3>
                     </div>
                     <div className="first_img_container">
-                        <img src="" alt="a pic of two lovely students" />
+                        <div className="man_container">
+                             <img  src={STAV} alt="a pic of two lovely students" />
+                        </div>
+                        <div className="man_container">
+                            <img src ={ROI}/>
+                        </div>
                     </div>
                 </div>
 
@@ -100,7 +111,7 @@ function Home() {
                             </h2>
                         </div>
                         <div className="second_info_img_container">
-                            <img src="" alt="a pic of a nice machinery / users using the bracelet" width="500" height="600"/>
+                            <img src={ARDUINO} alt="a pic of a nice machinery / users using the bracelet" width="500" height="600"/>
                         </div>
                     </div>
                 </div>
@@ -116,18 +127,21 @@ function Home() {
                         </div>
                         <div className="third_middle">
                             <div className="circles">
-                                <div className="circle_container">
-                                    <div className="circle">
-                                        <img src="" alt="a pic of posts" />
-                                    </div>
+                                <Link to="/posts" className="circle_container">
+
+                                        <div className="circle">
+                                            <img src={PLAY_FLAT} alt="a pic of posts" />
+                                        </div>
                                     <h5> Post, Share, and hear others creations</h5>
-                                </div>
-                                <div className="circle_container">
-                                    <div className="circle">
-                                        <img src="" alt="a pic of songs" />
-                                    </div>
+                                </Link>
+                                <Link to="/songs" className="circle_container">
+
+                                        <div className="circle">
+                                            <img src={NOTE_PIC} alt="a pic of songs" />
+                                        </div>
+
                                     <h5> Learn to play some cool music with the music bracelet</h5>
-                                </div>
+                                </Link>
                             </div>
                         </div>
                         <div className="third_down">

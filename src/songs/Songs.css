@@ -2,6 +2,25 @@
     height: 100vh;
 }
 
+.image_page{
+    height: 100%;
+    background-color: #1D1B26;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image_container{
+    height: 70%;
+    width: 60%;
+
+}
+
+.image_container img{
+    height: 100%;
+    width: 100%;
+}
+
 .page{
     height: 80%;
     min-width: 840px;
